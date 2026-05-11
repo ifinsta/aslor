@@ -1,5 +1,8 @@
 # android-studio-llm-openai-reasoning-proxy
-Aslor dashboard (https://github.com/ifinsta/aslor/commit/64cd8a1d8b0feb4cc08879d08f6d7d0d62ea3097#diff-d0c1dc2a4765656e2ccd7998c776a2602339cee2ef70aba39b244cb6df1c9b6f)
+
+![Aslor dashboard] (https://github.com/ifinsta/aslor/commit/64cd8a1d8b0feb4cc08879d08f6d7d0d62ea3097#diff-d0c1dc2a4765656e2ccd7998c776a2602339cee2ef70aba39b244cb6df1c9b6f)
+
+
 **A Windows-first local intelligence service that connects Android Studio agents to OpenAI-compatible reasoning models while preserving reasoning state, enriching project context, routing tasks intelligently, and protecting developer workflows.**
 
 ---
