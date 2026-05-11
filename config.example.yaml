@@ -1,0 +1,33 @@
+server:
+  host: 127.0.0.1
+  port: 3001
+
+provider:
+  name: openai
+  base_url: https://api.openai.com/v1
+  api_key_env: OPENAI_API_KEY
+  timeout_seconds: 120
+
+# Example Chutes provider configuration:
+# provider:
+#   name: chutes
+#   base_url: https://llm.chutes.ai/v1
+#   api_key_env: CHUTES_API_KEY
+#   timeout_seconds: 120
+
+cache:
+  path: ./data/cache.db
+  encrypt: true
+
+logging:
+  level: INFO
+  format: json
+
+vision:
+  enabled: false
+  base_url: https://api.openai.com/v1
+  model: gpt-4o-mini
+  api_key_env: OPENAI_API_KEY
+  timeout_seconds: 60
+  upload_dir: ./data/vision
+  max_image_bytes: 10485760

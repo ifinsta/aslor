@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASLOR &mdash; Dashboard</title>
+<style>
+  :root {
+    --bg: #0b0e11;
+    --surface: #15181c;
+    --surface-raised: #1c2025;
+    --border: #2a2e35;
+    --text: #d4d6da;
+    --text-muted: #848992;
+    --accent: #5b8dee;
+    --accent-dim: #3d5fa0;
+    --danger: #e0556a;
+    --success: #3db87b;
+    --warning: #e8a840;
+    --radius: 8px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --mono: "SF Mono", "Cascadia Code", "JetBrains Mono", "Fira Code", Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 15px; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  .layout { display: flex; min-height: 100vh; }
+  .sidebar {
+    width: 250px; flex-shrink: 0;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 28px 20px;
+    display: flex; flex-direction: column;
+  }
+  .main { flex: 1; padding: 36px 44px; max-width: 900px; }
+
+  /* ── Sidebar ────────────────────────────────────────────── */
+  .logo { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; color: #fff; margin-bottom: 4px; }
+  .logo-sub { font-size: 0.78rem; color: var(--text-muted); font-family: var(--mono); margin-bottom: 32px; }
+  .nav-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
+  .nav-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 12px; border-radius: 6px;
+    color: var(--text); text-decoration: none;
+    font-size: 0.87rem; margin-bottom: 2px;
+    transition: background 0.15s; cursor: pointer;
+  }
+  .nav-item:hover { background: var(--surface-raised); }
+  .nav-item.active { background: var(--surface-raised); color: var(--accent); }
+  .nav-badge {
+    margin-left: auto; font-size: 0.7rem;
+    background: var(--accent-dim); color: #fff;
+    padding: 1px 7px; border-radius: 10px; font-weight: 500;
+  }
+  .sidebar-footer {
+    margin-top: auto; border-top: 1px solid var(--border); padding-top: 16px;
+  }
+  .status-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0; }
+  .status-text { font-size: 0.8rem; color: var(--text-muted); }
+  .status-value { font-size: 0.78rem; color: var(--text); font-family: var(--mono); }
+
+  /* ── Sections ───────────────────────────────────────────── */
+  .section { display: none; }
+  .section.active { display: block; }
+  .section-title { font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .section-desc { font-size: 0.87rem; color: var(--text-muted); margin-bottom: 28px; }
+
+  /* ── Stat Cards ─────────────────────────────────────────── */
+  .stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 24px; }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 18px;
+  }
+  .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 6px; }
+  .stat-value { font-size: 1.5rem; font-weight: 600; color: #fff; font-family: var(--mono); }
+  .stat-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+
+  /* ── Key Status ─────────────────────────────────────────── */
+  .key-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px; margin-bottom: 24px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .key-indicator {
+    width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0;
+  }
+  .key-indicator.ok { background: var(--success); box-shadow: 0 0 8px rgba(61,184,123,0.5); }
+  .key-indicator.none { background: var(--danger); box-shadow: 0 0 8px rgba(224,85,106,0.5); }
+  .key-info { flex: 1; }
+  .key-label { font-size: 0.82rem; font-weight: 500; color: #fff; }
+  .key-detail { font-size: 0.78rem; color: var(--text-muted); font-family: var(--mono); }
+
+  /* ── Connection Test ────────────────────────────────────── */
+  .conn-panel {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px; margin-bottom: 24px;
+  }
+  .conn-result {
+    margin-top: 12px; padding: 10px 14px; border-radius: 6px;
+    font-family: var(--mono); font-size: 0.82rem; display: none;
+  }
+  .conn-result.ok { background: rgba(61,184,123,0.08); color: var(--success); border: 1px solid rgba(61,184,123,0.2); display: block; }
+  .conn-result.fail { background: rgba(224,85,106,0.08); color: var(--danger); border: 1px solid rgba(224,85,106,0.2); display: block; }
+
+  /* ── Forms ──────────────────────────────────────────────── */
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block; font-size: 0.8rem; font-weight: 500;
+    color: var(--text-muted); margin-bottom: 5px; letter-spacing: 0.02em;
+  }
+  .form-group input, .form-group select {
+    width: 100%; padding: 9px 13px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); color: var(--text);
+    font-family: var(--mono); font-size: 0.85rem; outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .form-group input:focus, .form-group select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(91,141,238,0.15);
+  }
+  .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23848992' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center;
+    padding-right: 36px;
+  }
+  .form-hint { font-size: 0.72rem; color: var(--text-muted); margin-top: 3px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .toggle-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .toggle { position: relative; width: 44px; height: 24px; flex-shrink: 0; }
+  .toggle input { display: none; }
+  .toggle .slider { position: absolute; inset: 0; background: var(--border); border-radius: 12px; cursor: pointer; transition: background 0.2s; }
+  .toggle .slider::after { content: ""; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: transform 0.2s; }
+  .toggle input:checked + .slider { background: var(--accent); }
+  .toggle input:checked + .slider::after { transform: translateX(20px); }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  /* ── Buttons ────────────────────────────────────────────── */
+  .btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 9px 20px; border-radius: var(--radius);
+    font-size: 0.85rem; font-weight: 500; border: none;
+    cursor: pointer; transition: background 0.15s, opacity 0.15s;
+    font-family: var(--font); white-space: nowrap;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #4a7cd8; }
+  .btn-ghost { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
+  .btn-ghost:hover { background: var(--surface-raised); color: var(--text); }
+  .btn-danger { background: transparent; color: var(--danger); border: 1px solid rgba(224,85,106,0.3); }
+  .btn-danger:hover { background: rgba(224,85,106,0.1); }
+  .btn-sm { padding: 5px 12px; font-size: 0.78rem; }
+
+  /* ── Tables ─────────────────────────────────────────────── */
+  .table-wrap {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden; margin-bottom: 20px;
+  }
+  .table-wrap table { width: 100%; border-collapse: collapse; }
+  .table-wrap th {
+    text-align: left; font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--text-muted); font-weight: 600;
+    padding: 10px 14px; border-bottom: 1px solid var(--border);
+  }
+  .table-wrap td {
+    padding: 9px 14px; border-bottom: 1px solid var(--border);
+    font-size: 0.82rem; font-family: var(--mono);
+  }
+  .table-wrap tr:last-child td { border-bottom: none; }
+  .table-wrap tr:hover td { background: rgba(255,255,255,0.015); }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 0.72rem; font-weight: 500; font-family: var(--font);
+  }
+  .badge-ok { background: rgba(61,184,123,0.15); color: var(--success); }
+  .badge-err { background: rgba(224,85,106,0.15); color: var(--danger); }
+  .badge-info { background: rgba(91,141,238,0.15); color: var(--accent); }
+  .empty-state { text-align: center; padding: 32px 16px; color: var(--text-muted); font-size: 0.85rem; }
+
+  /* ── Log viewer ─────────────────────────────────────────── */
+  .log-viewer {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); height: 400px; overflow-y: auto;
+    padding: 12px; font-family: var(--mono); font-size: 0.78rem;
+    line-height: 1.6;
+  }
+  .log-line { padding: 2px 0; white-space: pre-wrap; word-break: break-all; }
+  .log-line .ts { color: var(--text-muted); margin-right: 8px; }
+  .log-line .lvl { margin-right: 8px; font-weight: 500; }
+  .log-line .lvl-INFO { color: var(--accent); }
+  .log-line .lvl-WARNING { color: var(--warning); }
+  .log-line .lvl-ERROR { color: var(--danger); }
+  .log-line .lvl-DEBUG { color: var(--text-muted); }
+
+  /* ── Toast ──────────────────────────────────────────────── */
+  .toast {
+    position: fixed; bottom: 28px; right: 28px;
+    padding: 11px 20px; border-radius: var(--radius);
+    font-size: 0.83rem; font-weight: 500; z-index: 100;
+    animation: toastIn 0.3s ease; pointer-events: none;
+  }
+  .toast.success { background: var(--success); color: #fff; }
+  .toast.error { background: var(--danger); color: #fff; }
+  @keyframes toastIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .restart-note {
+    margin-top: 14px; padding: 10px 14px;
+    background: rgba(91,141,238,0.08); border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.81rem; color: var(--accent); display: none;
+  }
+
+  @media (max-width: 760px) {
+    .layout { flex-direction: column; }
+    .sidebar { width: 100%; padding: 16px; }
+    .main { padding: 20px; }
+    .stat-grid { grid-template-columns: repeat(2,1fr); }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div>
+      <div class="logo">ASLOR</div>
+      <div class="logo-sub">Proxy Dashboard</div>
+      <div class="nav-label">Sections</div>
+      <a class="nav-item active" data-section="overview">
+        <span>Overview</span>
+      </a>
+      <a class="nav-item" data-section="provider">Provider</a>
+      <a class="nav-item" data-section="server">Server</a>
+      <a class="nav-item" data-section="cache">
+        <span>Cache &amp; Logging</span>
+        <span class="nav-badge" id="cache-count-badge" style="display:none">0</span>
+      </a>
+      <a class="nav-item" data-section="requests">
+        <span>Requests</span>
+        <span class="nav-badge" id="req-count-badge" style="display:none">0</span>
+      </a>
+      <a class="nav-item" data-section="logs">Logs</a>
+      <a class="nav-item" data-section="missions">Missions</a>
+      <a class="nav-item" data-section="skills">Skills</a>
+    </div>
+    <div class="sidebar-footer">
+      <div class="status-row">
+        <div class="status-dot" id="status-dot"></div>
+        <span class="status-text" id="status-text">Checking...</span>
+      </div>
+      <div class="status-value" id="uptime-value" style="margin-top:2px"></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <!-- ═══════════════ OVERVIEW ═══════════════ -->
+    <div id="section-overview" class="section active">
+      <h2 class="section-title">Overview</h2>
+      <p class="section-desc">Real-time status of the proxy and upstream connection.</p>
+
+      <div class="key-card" id="key-card">
+        <div class="key-indicator none" id="key-dot"></div>
+        <div class="key-info">
+          <div class="key-label" id="key-label">API Key: Checking...</div>
+          <div class="key-detail" id="key-detail"></div>
+        </div>
+        <button class="btn btn-ghost btn-sm" id="btn-refresh-key">Refresh</button>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Requests</div>
+          <div class="stat-value" id="stat-total">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Success Rate</div>
+          <div class="stat-value" id="stat-rate">--</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Avg Latency</div>
+          <div class="stat-value" id="stat-latency">0ms</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Repairs</div>
+          <div class="stat-value" id="stat-repairs">0</div>
+        </div>
+      </div>
+
+      <div class="conn-panel">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div style="font-weight:500;color:#fff;font-size:0.9rem">Connection Test</div>
+            <div style="font-size:0.78rem;color:var(--text-muted);margin-top:2px">Verify the upstream provider is reachable with current credentials.</div>
+          </div>
+          <button class="btn btn-primary btn-sm" id="btn-test-conn">Test Connection</button>
+        </div>
+        <div class="conn-result" id="conn-result"></div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ PROVIDER ═══════════════ -->
+    <div id="section-provider" class="section">
+      <h2 class="section-title">Provider</h2>
+      <p class="section-desc">Upstream LLM provider and connection details. Changing the provider auto-fills recommended defaults.</p>
+
+      <div class="form-group">
+        <label for="provider-name">Provider</label>
+        <select id="provider-name"></select>
+      </div>
+      <div class="form-group" id="provider-model-group">
+        <label for="provider-default-model">Known Model</label>
+        <select id="provider-default-model"></select>
+        <div class="form-hint">Select a known model from the registry, or override it with a custom model ID below.</div>
+      </div>
+      <div class="form-group" id="provider-custom-model-group">
+        <label for="provider-custom-model">Custom Model ID</label>
+        <input type="text" id="provider-custom-model" placeholder="Qwen/Qwen3-32B-TEE">
+        <div class="form-hint">Stored in config as the preferred model for this provider. Useful for Chutes and future custom registries.</div>
+      </div>
+      <div class="form-group">
+        <label for="provider-base-url">Base URL</label>
+        <input type="text" id="provider-base-url" placeholder="https://api.deepseek.com/v1">
+      </div>
+      <div class="form-group" id="provider-api-key-group">
+        <label for="provider-api-key-env">API Key Environment Variable</label>
+        <input type="text" id="provider-api-key-env" placeholder="DEEPSEEK_API_KEY">
+        <div class="form-hint">The proxy forwards the key from Android Studio. This env var is only a fallback.</div>
+      </div>
+      <div class="form-group" id="provider-timeout-group">
+        <label for="provider-timeout">Timeout (seconds)</label>
+        <input type="number" id="provider-timeout" min="10" max="600" value="120">
+      </div>
+      <div class="form-group">
+        <label>Provider Catalog</label>
+        <div id="provider-catalog-note" class="form-hint">Loading provider catalog...</div>
+      </div>
+
+      <hr class="divider" id="thinking-divider" style="display:none">
+      <div id="thinking-group" style="display:none">
+        <h3 style="font-size:0.95rem;font-weight:600;color:#fff;margin-bottom:12px">Extended Thinking</h3>
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:16px">Enable Claude's extended thinking mode. When on, thinking blocks are cached and re-injected across turns. Requires a compatible Claude model.</p>
+        <div class="toggle-row">
+          <label class="toggle"><input type="checkbox" id="thinking-enabled"><span class="slider"></span></label>
+          <span style="font-size:0.85rem;color:var(--text)">Enable thinking mode</span>
+        </div>
+        <div class="form-group" id="thinking-budget-group" style="margin-top:8px">
+          <label for="thinking-budget">Thinking Budget (tokens)</label>
+          <input type="number" id="thinking-budget" min="1024" max="32000" step="1024" value="5000">
+          <div class="form-hint">Higher values allow deeper reasoning but consume more tokens. Minimum 1024.</div>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <div id="vision-group">
+        <h3 style="font-size:0.95rem;font-weight:600;color:#fff;margin-bottom:12px">Vision Sidecar</h3>
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:16px">Configure the optional vision model used for screenshots and image analysis.</p>
+        <div class="toggle-row">
+          <label class="toggle"><input type="checkbox" id="vision-enabled"><span class="slider"></span></label>
+          <span style="font-size:0.85rem;color:var(--text)">Enable vision sidecar</span>
+        </div>
+        <div id="vision-fields">
+          <div class="form-group">
+            <label for="vision-model">Vision Model</label>
+            <input type="text" id="vision-model" placeholder="gpt-4o-mini">
+          </div>
+          <div class="form-group">
+            <label for="vision-base-url">Vision Base URL</label>
+            <input type="text" id="vision-base-url" placeholder="https://api.openai.com/v1">
+          </div>
+          <div class="form-group">
+            <label for="vision-api-key-env">Vision API Key Environment Variable</label>
+            <input type="text" id="vision-api-key-env" placeholder="OPENAI_API_KEY">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vision-timeout">Vision Timeout (seconds)</label>
+              <input type="number" id="vision-timeout" min="10" max="600" value="60">
+            </div>
+            <div class="form-group">
+              <label for="vision-max-bytes">Max Image Size (bytes)</label>
+              <input type="number" id="vision-max-bytes" min="1024" step="1024" value="10485760">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="vision-upload-dir">Vision Upload Directory</label>
+            <input type="text" id="vision-upload-dir" placeholder="./data/vision">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ SERVER ═══════════════ -->
+    <div id="section-server" class="section">
+      <h2 class="section-title">Server</h2>
+      <p class="section-desc">Network binding and port configuration.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="server-host">Host</label>
+          <input type="text" id="server-host" placeholder="127.0.0.1">
+        </div>
+        <div class="form-group">
+          <label for="server-port">Port</label>
+          <input type="number" id="server-port" min="1024" max="65535" value="3001">
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ CACHE & LOGGING ═══════════════ -->
+    <div id="section-cache" class="section">
+      <h2 class="section-title">Cache &amp; Logging</h2>
+      <p class="section-desc">Reasoning state storage, encryption, and diagnostic output.</p>
+
+      <div class="form-group">
+        <label for="cache-path">Cache Database Path</label>
+        <input type="text" id="cache-path" placeholder="./data/cache.db">
+      </div>
+      <div class="toggle-row">
+        <label class="toggle"><input type="checkbox" id="cache-encrypt" checked><span class="slider"></span></label>
+        <span style="font-size:0.85rem;color:var(--text)">Encrypt cache at rest (Fernet)</span>
+      </div>
+      <hr class="divider">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="logging-level">Log Level</label>
+          <select id="logging-level">
+            <option value="DEBUG">DEBUG</option>
+            <option value="INFO" selected>INFO</option>
+            <option value="WARNING">WARNING</option>
+            <option value="ERROR">ERROR</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="logging-format">Log Format</label>
+          <select id="logging-format">
+            <option value="json">JSON (structured)</option>
+            <option value="text">Plain text</option>
+          </select>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <h3 style="font-size:1rem;font-weight:600;color:#fff">Cached Sessions</h3>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-ghost btn-sm" id="btn-refresh-cache">Refresh</button>
+          <button class="btn btn-danger btn-sm" id="btn-clear-cache">Clear All</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Session</th><th>Size</th><th>Last Updated</th><th></th></tr></thead>
+          <tbody id="cache-tbody">
+            <tr><td colspan="4" class="empty-state">No cached sessions</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ═══════════════ REQUESTS ═══════════════ -->
+    <div id="section-requests" class="section">
+      <h2 class="section-title">Requests</h2>
+      <p class="section-desc">Recent proxied requests. Auto-refreshes every 5 seconds.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Time</th><th>Method</th><th>Path</th><th>Status</th><th>Latency</th><th>Model</th><th>Repair</th></tr></thead>
+          <tbody id="req-tbody">
+            <tr><td colspan="7" class="empty-state">No requests yet</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ═══════════════ LOGS ═══════════════ -->
+    <div id="section-logs" class="section">
+      <h2 class="section-title">Logs</h2>
+      <p class="section-desc">Live server log. Auto-refreshes every 3 seconds.</p>
+      <div class="log-viewer" id="log-viewer">
+        <div style="color:var(--text-muted);text-align:center;padding-top:160px">Loading...</div>
+      </div>
+    </div>
+
+    <!-- ── Missions ──────────────────────────────────────────────── -->
+    <div id="section-missions" class="section">
+      <h2 class="section-title">Missions</h2>
+      <p class="section-desc">Define persistent goals that the proxy injects into every request. The active mission steers the agent and tracks progress across attempts.</p>
+
+      <div class="table-wrap" style="padding:20px">
+        <h3 style="font-size:0.95rem;font-weight:600;color:#fff;margin-bottom:14px">Create Mission</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ms-id">Mission ID</label>
+            <input type="text" id="ms-id" placeholder="e.g. fix-login-bug">
+          </div>
+          <div class="form-group">
+            <label for="ms-title">Title</label>
+            <input type="text" id="ms-title" placeholder="Fix Login Bug">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ms-desc">Description</label>
+          <input type="text" id="ms-desc" placeholder="Locate and fix the login authentication issue">
+        </div>
+        <div class="form-group">
+          <label for="ms-criteria">Success Criteria</label>
+          <input type="text" id="ms-criteria" placeholder="Bug is fixed, all tests pass, login works for all user roles">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ms-attempts">Max Attempts</label>
+            <input type="number" id="ms-attempts" min="1" max="20" value="3">
+          </div>
+          <div class="form-group">
+            <label for="ms-skills">Skills (comma-separated)</label>
+            <input type="text" id="ms-skills" placeholder="code_review, code_critic">
+          </div>
+        </div>
+        <button class="btn btn-primary" id="btn-create-mission">Create Mission</button>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin:20px 0 12px">
+        <h3 style="font-size:1rem;font-weight:600;color:#fff">All Missions</h3>
+        <button class="btn btn-ghost btn-sm" id="btn-refresh-missions">Refresh</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Title</th><th>Status</th><th>Attempt</th><th>Criteria</th><th></th></tr></thead>
+          <tbody id="ms-tbody">
+            <tr><td colspan="6" class="empty-state">No missions created yet</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Skills ────────────────────────────────────────────────── -->
+    <div id="section-skills" class="section">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-desc">Pluggable capabilities that enrich the agent's context during mission execution. Loaded from <code>skills.yaml</code>. Toggle switches take effect immediately.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Title</th><th>Description</th><th>Enabled</th></tr></thead>
+          <tbody id="skill-tbody">
+            <tr><td colspan="4" class="empty-state">No skills loaded</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Save bar (shared) -->
+    <div style="margin-top:32px;display:flex;gap:10px;align-items:center">
+      <button class="btn btn-primary" id="btn-save">Save Configuration</button>
+      <button class="btn btn-ghost" id="btn-restart">Restart Server</button>
+      <button class="btn btn-ghost" id="btn-reload">Reload from Disk</button>
+    </div>
+    <div class="restart-note" id="restart-note">Configuration saved. Restart the server if auto-reload does not apply the change immediately.</div>
+  </main>
+</div>
+<div id="toast" class="toast" style="display:none"></div>
+
+<script>
+const $$ = (s) => document.querySelectorAll(s);
+const $ = (s) => document.querySelector(s);
+
+// ── Navigation ──────────────────────────────────────────────
+$$('.nav-item').forEach(el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    $$('.nav-item').forEach(n => n.classList.remove('active'));
+    el.classList.add('active');
+    $$('.section').forEach(s => s.classList.remove('active'));
+    $(`#section-${el.dataset.section}`).classList.add('active');
+  });
+});
+
+// ── Toast ───────────────────────────────────────────────────
+let toastTimer;
+function toast(msg, type) {
+  const t = $('#toast');
+  t.textContent = msg; t.className = `toast ${type}`; t.style.display = 'block';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.style.display = 'none'; }, 3000);
+}
+
+// ── Formatters ──────────────────────────────────────────────
+function ago(ts) {
+  const s = Math.floor((Date.now()/1000) - ts);
+  if (s < 60) return `${s}s ago`;
+  if (s < 3600) return `${Math.floor(s/60)}m ago`;
+  return `${Math.floor(s/3600)}h ago`;
+}
+function formatBytes(n) { return n < 1024 ? `${n}B` : `${(n/1024).toFixed(1)}KB`; }
+function timeStr(ts) {
+  const d = new Date(ts * 1000);
+  return d.toLocaleTimeString('en-US', { hour12: false });
+}
+
+// ── Status sidebar ──────────────────────────────────────────
+async function checkStatus() {
+  try {
+    const r = await fetch('/status'); const d = await r.json();
+    const dot = $('#status-dot');
+    if (d.status === 'running') { dot.style.background = '#3db87b'; $('#status-text').textContent = 'Running'; }
+    else { dot.style.background = '#e0556a'; $('#status-text').textContent = 'Down'; }
+    const h = Math.floor(d.uptime_seconds / 3600);
+    const m = Math.floor((d.uptime_seconds % 3600) / 60);
+    const s = d.uptime_seconds % 60;
+    $('#uptime-value').textContent = `uptime ${h}h ${m}m ${s}s`;
+  } catch {
+    $('#status-dot').style.background = '#e0556a';
+    $('#status-text').textContent = 'Unreachable';
+  }
+}
+
+// ── API Key Status ──────────────────────────────────────────
+async function loadKeyStatus() {
+  try {
+    const r = await fetch('/admin/key-status'); const d = await r.json();
+    const dot = $('#key-dot');
+    if (d.available) {
+      dot.className = 'key-indicator ok';
+      $('#key-label').textContent = `API Key: Available (${d.source})`;
+    } else {
+      dot.className = 'key-indicator none';
+      $('#key-label').textContent = 'API Key: Not available';
+    }
+    $('#key-detail').textContent = d.masked ? `${d.masked}  [env: ${d.env_var}]` : `Set ${d.env_var} or provide via Android Studio`;
+  } catch {
+    $('#key-dot').className = 'key-indicator none';
+    $('#key-label').textContent = 'API Key: Error checking';
+  }
+}
+$('#btn-refresh-key').addEventListener('click', loadKeyStatus);
+
+// ── Connection Test ─────────────────────────────────────────
+$('#btn-test-conn').addEventListener('click', async () => {
+  const el = $('#conn-result');
+  el.className = 'conn-result'; el.style.display = 'none';
+  el.textContent = 'Testing...';
+  try {
+    const r = await fetch('/admin/connection-test', { method: 'POST' });
+    const d = await r.json();
+    if (d.ok) {
+      el.className = 'conn-result ok';
+      el.textContent = `Connected — ${d.status_code} in ${d.latency_ms}ms`;
+    } else {
+      el.className = 'conn-result fail';
+      el.textContent = d.status_code === 0
+        ? `Unreachable: ${d.error} (${d.latency_ms}ms)`
+        : `Failed: HTTP ${d.status_code} (${d.latency_ms}ms)`;
+    }
+  } catch (e) {
+    el.className = 'conn-result fail';
+    el.textContent = `Error: ${e.message || e}`;
+  }
+});
+
+// ── Stats ───────────────────────────────────────────────────
+async function loadStats() {
+  try {
+    const r = await fetch('/admin/stats'); const d = await r.json();
+    $('#stat-total').textContent = d.total_requests;
+    if (d.total_requests > 0) {
+      const rate = Math.round((d.success_count / d.total_requests) * 100);
+      $('#stat-rate').textContent = rate + '%';
+    } else { $('#stat-rate').textContent = '--'; }
+    $('#stat-latency').textContent = d.avg_latency_ms + 'ms';
+    $('#stat-repairs').textContent = d.repair_count;
+    $('#req-count-badge').textContent = d.total_requests;
+    $('#req-count-badge').style.display = d.total_requests > 0 ? 'inline' : 'none';
+
+    const tbody = $('#req-tbody');
+    if (!d.recent_requests || d.recent_requests.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No requests yet</td></tr>';
+    } else {
+      tbody.innerHTML = d.recent_requests.map(r => `
+        <tr>
+          <td>${timeStr(r.timestamp)}</td>
+          <td>${r.method}</td>
+          <td>${r.path}</td>
+          <td><span class="badge ${r.status >= 200 && r.status < 400 ? 'badge-ok' : 'badge-err'}">${r.status}</span></td>
+          <td>${r.latency_ms}ms</td>
+          <td>${r.model || '--'}</td>
+          <td>${r.repair ? '<span class="badge badge-info">yes</span>' : '<span style="color:var(--text-muted)">--</span>'}</td>
+        </tr>
+      `).join('');
+    }
+  } catch { /* silent */ }
+}
+
+// ── Cache entries ───────────────────────────────────────────
+async function loadCacheEntries() {
+  try {
+    const r = await fetch('/admin/cache/entries'); const entries = await r.json();
+    $('#cache-count-badge').textContent = entries.length;
+    $('#cache-count-badge').style.display = entries.length > 0 ? 'inline' : 'none';
+    const tbody = $('#cache-tbody');
+    if (!entries || entries.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="4" class="empty-state">No cached sessions</td></tr>';
+    } else {
+      tbody.innerHTML = entries.map(e => {
+        const sid = e.key.replace(/^reasoning:/, '');
+        return `
+          <tr>
+            <td title="${sid}">${sid.substring(0, 24)}${sid.length > 24 ? '...' : ''}</td>
+            <td>${formatBytes(e.size_bytes)}</td>
+            <td>${ago(e.updated_at)}</td>
+            <td style="text-align:right"><button class="btn btn-ghost btn-sm cache-del" data-sid="${sid}">Delete</button></td>
+          </tr>`;
+      }).join('');
+      $$('.cache-del').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const sid = btn.dataset.sid;
+          await fetch(`/admin/cache/entries/${encodeURIComponent(sid)}`, { method: 'DELETE' });
+          loadCacheEntries();
+          toast('Entry deleted', 'success');
+        });
+      });
+    }
+  } catch { /* silent */ }
+}
+$('#btn-refresh-cache').addEventListener('click', loadCacheEntries);
+$('#btn-clear-cache').addEventListener('click', async () => {
+  try {
+    const r = await fetch('/admin/cache/clear', { method: 'POST' });
+    const d = await r.json();
+    toast(`Cleared ${d.deleted} entries`, 'success');
+    loadCacheEntries();
+  } catch { toast('Failed to clear cache', 'error'); }
+});
+
+// ── Logs ────────────────────────────────────────────────────
+async function loadLogs() {
+  try {
+    const r = await fetch('/admin/logs'); const entries = await r.json();
+    const viewer = $('#log-viewer');
+    if (!entries || entries.length === 0) {
+      viewer.innerHTML = '<div style="color:var(--text-muted);text-align:center;padding-top:160px">No log entries yet</div>';
+    } else {
+      viewer.innerHTML = entries.map(e => {
+        const ts = new Date(e.timestamp * 1000).toLocaleTimeString('en-US', { hour12: false });
+        return `<div class="log-line"><span class="ts">${ts}</span><span class="lvl lvl-${e.level}">${e.level}</span>${e.message}</div>`;
+      }).join('');
+      viewer.scrollTop = viewer.scrollHeight;
+    }
+  } catch { /* silent */ }
+}
+
+// ── Config load ─────────────────────────────────────────────
+async function loadConfig() {
+  try {
+    const r = await fetch('/admin/config'); const cfg = await r.json();
+    const p = cfg.provider || {}, s = cfg.server || {}, c = cfg.cache || {}, l = cfg.logging || {}, v = cfg.vision || {};
+    if (!providerCatalog.length) await loadProviderCatalog();
+    $('#provider-name').value = p.name || (providerCatalog[0]?.name || 'openai');
+    applyProviderPreset($('#provider-name').value, false);
+    $('#provider-base-url').value = p.base_url || $('#provider-base-url').value || '';
+    $('#provider-api-key-env').value = p.api_key_env || $('#provider-api-key-env').value || '';
+    $('#provider-timeout').value = p.timeout_seconds || $('#provider-timeout').value || 120;
+    $('#provider-custom-model').value = p.default_model || '';
+    syncProviderModelSelection(p.default_model || '');
+    $('#thinking-enabled').checked = p.thinking_enabled === true;
+    $('#thinking-budget').value = p.thinking_budget_tokens || 5000;
+    updateThinkingUI();
+    $('#vision-enabled').checked = v.enabled === true;
+    $('#vision-model').value = v.model || 'gpt-4o-mini';
+    $('#vision-base-url').value = v.base_url || 'https://api.openai.com/v1';
+    $('#vision-api-key-env').value = v.api_key_env || 'OPENAI_API_KEY';
+    $('#vision-timeout').value = v.timeout_seconds || 60;
+    $('#vision-max-bytes').value = v.max_image_bytes || 10485760;
+    $('#vision-upload-dir').value = v.upload_dir || './data/vision';
+    updateVisionUI();
+    $('#server-host').value = s.host || '127.0.0.1';
+    $('#server-port').value = s.port || 3001;
+    $('#cache-path').value = c.path || './data/cache.db';
+    $('#cache-encrypt').checked = c.encrypt !== false;
+    $('#logging-level').value = (l.level || 'INFO').toUpperCase();
+    $('#logging-format').value = l.format === 'text' ? 'text' : 'json';
+    updateProviderUI();
+  } catch { toast('Could not load configuration', 'error'); }
+}
+
+// ── Config save ─────────────────────────────────────────────
+$('#btn-save').addEventListener('click', async () => {
+  const providerName = $('#provider-name').value;
+  const customModel = $('#provider-custom-model').value.trim();
+  const knownModel = $('#provider-default-model').value;
+  const providerBody = {
+      name: providerName,
+      base_url: $('#provider-base-url').value,
+  };
+  if (providerName !== 'passthrough') {
+    providerBody.default_model = customModel || knownModel;
+    providerBody.api_key_env = $('#provider-api-key-env').value;
+    providerBody.timeout_seconds = parseInt($('#provider-timeout').value) || 120;
+  }
+  if (providerName === 'anthropic') {
+    providerBody.thinking_enabled = $('#thinking-enabled').checked;
+    providerBody.thinking_budget_tokens = parseInt($('#thinking-budget').value) || 5000;
+  }
+  const body = {
+    provider: providerBody,
+    server: { host: $('#server-host').value, port: parseInt($('#server-port').value) || 3001 },
+    cache: { path: $('#cache-path').value, encrypt: $('#cache-encrypt').checked },
+    logging: { level: $('#logging-level').value, format: $('#logging-format').value },
+    vision: {
+      enabled: $('#vision-enabled').checked,
+      model: $('#vision-model').value.trim(),
+      base_url: $('#vision-base-url').value.trim(),
+      api_key_env: $('#vision-api-key-env').value.trim(),
+      timeout_seconds: parseInt($('#vision-timeout').value) || 60,
+      max_image_bytes: parseInt($('#vision-max-bytes').value) || 10485760,
+      upload_dir: $('#vision-upload-dir').value.trim(),
+    },
+  };
+  try {
+    const r = await fetch('/admin/config', {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
+    });
+    if (r.ok) { toast('Configuration saved', 'success'); $('#restart-note').style.display = 'block'; }
+    else { const e = await r.json(); toast(e.detail || 'Save failed', 'error'); }
+  } catch { toast('Network error while saving', 'error'); }
+});
+async function waitForServerAfterRestart(timeoutMs = 30000) {
+  const startedAt = Date.now();
+  while (Date.now() - startedAt < timeoutMs) {
+    try {
+      const r = await fetch('/status', { cache: 'no-store' });
+      if (r.ok) return await r.json();
+    } catch { /* server still restarting */ }
+    await new Promise(resolve => setTimeout(resolve, 1000));
+  }
+  throw new Error('Restart timed out');
+}
+$('#btn-restart').addEventListener('click', async () => {
+  const btn = $('#btn-restart');
+  const originalLabel = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Restarting...';
+  $('#status-text').textContent = 'Restarting...';
+  try {
+    await fetch('/admin/restart', { method: 'POST' });
+  } catch { /* current server may stop before the response fully settles */ }
+
+  try {
+    await waitForServerAfterRestart();
+    await Promise.all([
+      checkStatus(),
+      loadKeyStatus(),
+      loadConfig(),
+      loadStats(),
+      loadCacheEntries(),
+      loadLogs(),
+      loadMissions(),
+      loadSkills(),
+    ]);
+    $('#restart-note').style.display = 'none';
+    toast('Server restarted', 'success');
+  } catch {
+    toast('Restart requested, but the server did not come back in time', 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = originalLabel;
+  }
+});
+$('#btn-reload').addEventListener('click', () => { loadConfig(); toast('Reloaded from disk', 'success'); });
+
+// ── Provider catalog ────────────────────────────────────────
+let providerCatalog = [];
+function providerLabel(name) {
+  const labels = {
+    openai: 'OpenAI',
+    deepseek: 'DeepSeek',
+    anthropic: 'Anthropic',
+    chutes: 'Chutes',
+    passthrough: 'Passthrough',
+  };
+  return labels[name] || (name.charAt(0).toUpperCase() + name.slice(1));
+}
+function populateProviderOptions() {
+  const select = $('#provider-name');
+  select.innerHTML = providerCatalog.map(p =>
+    `<option value="${p.name}">${providerLabel(p.name)}</option>`
+  ).join('');
+}
+function renderProviderModels(providerName, selectedModel = '') {
+  const provider = providerCatalog.find(p => p.name === providerName);
+  const models = provider?.models || [];
+  const select = $('#provider-default-model');
+  if (!models.length) {
+    select.innerHTML = '<option value="">No known models</option>';
+    $('#provider-catalog-note').textContent = 'No models in registry for this provider yet.';
+    return;
+  }
+  select.innerHTML = models.map(m => `<option value="${m.id}">${m.id}</option>`).join('');
+  const match = models.some(m => m.id === selectedModel);
+  select.value = match ? selectedModel : models[0].id;
+  $('#provider-catalog-note').textContent =
+    `${models.length} known model(s) in registry for ${providerLabel(providerName)}. Adapter: ${provider?.adapter || '--'}.`;
+}
+function syncProviderModelSelection(value) {
+  const currentProvider = $('#provider-name').value;
+  renderProviderModels(currentProvider, value);
+  const known = $('#provider-default-model').value;
+  if (value && value !== known) $('#provider-custom-model').value = value;
+}
+function applyProviderPreset(providerName, overwriteModel = true) {
+  const provider = providerCatalog.find(p => p.name === providerName);
+  if (!provider) return;
+  if (provider.base_url) $('#provider-base-url').value = provider.base_url;
+  if (provider.api_key_env !== undefined) $('#provider-api-key-env').value = provider.api_key_env;
+  if (provider.timeout_seconds) $('#provider-timeout').value = provider.timeout_seconds;
+  if (provider.thinking_enabled !== undefined) $('#thinking-enabled').checked = provider.thinking_enabled;
+  if (provider.thinking_budget_tokens) $('#thinking-budget').value = provider.thinking_budget_tokens;
+  renderProviderModels(providerName, overwriteModel ? '' : ($('#provider-custom-model').value.trim() || $('#provider-default-model').value));
+  updateProviderUI();
+  updateThinkingUI();
+}
+async function loadProviderCatalog() {
+  try {
+    const r = await fetch('/admin/provider-catalog');
+    const d = await r.json();
+    providerCatalog = d.providers || [];
+    populateProviderOptions();
+    if ($('#provider-name').value) {
+      applyProviderPreset($('#provider-name').value, false);
+    }
+  } catch {
+    providerCatalog = [];
+    $('#provider-catalog-note').textContent = 'Could not load provider catalog.';
+  }
+}
+$('#provider-name').addEventListener('change', () => {
+  applyProviderPreset($('#provider-name').value, true);
+});
+$('#provider-default-model').addEventListener('change', () => {
+  const selected = $('#provider-default-model').value;
+  if ($('#provider-custom-model').value.trim() === '' || $('#provider-custom-model').value === selected) {
+    $('#provider-custom-model').value = '';
+  }
+});
+
+// ── Thinking UI ──────────────────────────────────────────────
+function updateThinkingUI() {
+  const isAnthropic = $('#provider-name').value === 'anthropic';
+  const thinkingOn = $('#thinking-enabled').checked;
+  $('#thinking-group').style.display = isAnthropic ? 'block' : 'none';
+  $('#thinking-divider').style.display = isAnthropic ? 'block' : 'none';
+  $('#thinking-budget-group').style.display = thinkingOn ? 'block' : 'none';
+}
+function updateProviderUI() {
+  const providerName = $('#provider-name').value;
+  const isPassthrough = providerName === 'passthrough';
+  $('#provider-model-group').style.display = isPassthrough ? 'none' : 'block';
+  $('#provider-custom-model-group').style.display = isPassthrough ? 'none' : 'block';
+  $('#provider-api-key-group').style.display = isPassthrough ? 'none' : 'block';
+  $('#provider-timeout-group').style.display = isPassthrough ? 'none' : 'block';
+  if (isPassthrough) {
+    $('#provider-catalog-note').textContent = 'Passthrough uses the model and Authorization header sent by Android Studio. Only the upstream base URL is configured here.';
+  }
+}
+$('#thinking-enabled').addEventListener('change', updateThinkingUI);
+function updateVisionUI() {
+  $('#vision-fields').style.display = $('#vision-enabled').checked ? 'block' : 'none';
+}
+$('#vision-enabled').addEventListener('change', updateVisionUI);
+
+// ── Missions ─────────────────────────────────────────────────
+async function loadMissions() {
+  try {
+    const r = await fetch('/admin/missions'); const d = await r.json();
+    const tbody = $('#ms-tbody');
+    if (!d.missions || d.missions.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" class="empty-state">No missions created yet</td></tr>';
+    } else {
+      tbody.innerHTML = d.missions.map(m => {
+        const statusBadge = {
+          active: '<span class="badge badge-ok">active</span>',
+          completed: '<span class="badge badge-info">completed</span>',
+          failed: '<span class="badge badge-err">failed</span>',
+          paused: '<span class="badge" style="background:rgba(232,168,64,0.15);color:var(--warning)">paused</span>',
+        }[m.status] || m.status;
+        const mid = m.mission_id.length > 22 ? m.mission_id.substring(0,22)+'...' : m.mission_id;
+        return '<tr>'
+          + '<td title="' + m.mission_id + '">' + mid + '</td>'
+          + '<td>' + m.title + '</td>'
+          + '<td>' + statusBadge + '</td>'
+          + '<td>' + m.current_attempt + '/' + m.max_attempts + '</td>'
+          + '<td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + (m.success_criteria||'') + '">' + (m.success_criteria || '--') + '</td>'
+          + '<td style="text-align:right">'
+          + (m.status === 'active' ? '<button class="btn btn-ghost btn-sm ms-pause" data-mid="' + m.mission_id + '">Pause</button> ' : '')
+          + ((m.status === 'failed' || m.status === 'completed') ? '<button class="btn btn-ghost btn-sm ms-reset" data-mid="' + m.mission_id + '">Reset</button> ' : '')
+          + '<button class="btn btn-danger btn-sm ms-del" data-mid="' + m.mission_id + '">Delete</button>'
+          + '</td></tr>';
+      }).join('');
+
+      $$('.ms-del').forEach(b => b.addEventListener('click', async () => {
+        const mid = b.dataset.mid;
+        await fetch('/admin/missions/' + encodeURIComponent(mid), { method: 'DELETE' });
+        loadMissions(); toast('Mission deleted', 'success');
+      }));
+      $$('.ms-pause').forEach(b => b.addEventListener('click', async () => {
+        const mid = b.dataset.mid;
+        await fetch('/admin/missions/' + encodeURIComponent(mid), {
+          method: 'PUT', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({status:'paused'}),
+        });
+        loadMissions(); toast('Mission paused', 'success');
+      }));
+      $$('.ms-reset').forEach(b => b.addEventListener('click', async () => {
+        const mid = b.dataset.mid;
+        await fetch('/admin/missions/' + encodeURIComponent(mid) + '/reset', { method: 'POST' });
+        loadMissions(); toast('Mission reset', 'success');
+      }));
+    }
+  } catch { /* silent */ }
+}
+
+$('#btn-create-mission').addEventListener('click', async () => {
+  const body = {
+    mission_id: $('#ms-id').value.trim(),
+    title: $('#ms-title').value.trim(),
+    description: $('#ms-desc').value.trim(),
+    success_criteria: $('#ms-criteria').value.trim(),
+    max_attempts: parseInt($('#ms-attempts').value) || 3,
+    skill_ids: $('#ms-skills').value.trim() ? $('#ms-skills').value.split(',').map(s => s.trim()).filter(Boolean) : null,
+  };
+  if (!body.mission_id) { toast('Mission ID is required', 'error'); return; }
+  try {
+    const r = await fetch('/admin/missions', {
+      method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(body),
+    });
+    if (r.ok) { toast('Mission created', 'success'); loadMissions(); clearMissionForm(); }
+    else { const e = await r.json(); toast(e.detail || 'Create failed', 'error'); }
+  } catch { toast('Network error', 'error'); }
+});
+$('#btn-refresh-missions').addEventListener('click', loadMissions);
+
+function clearMissionForm() {
+  $('#ms-id').value = ''; $('#ms-title').value = ''; $('#ms-desc').value = '';
+  $('#ms-criteria').value = ''; $('#ms-attempts').value = '3'; $('#ms-skills').value = '';
+}
+
+// ── Skills ───────────────────────────────────────────────────
+async function loadSkills() {
+  try {
+    const r = await fetch('/admin/skills'); const d = await r.json();
+    const tbody = $('#skill-tbody');
+    if (!d.skills || d.skills.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="4" class="empty-state">No skills loaded</td></tr>';
+    } else {
+      tbody.innerHTML = d.skills.map(s => '<tr>'
+        + '<td>' + s.id + '</td>'
+        + '<td>' + s.title + '</td>'
+        + '<td style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + s.description + '">' + s.description + '</td>'
+        + '<td><label class="toggle"><input type="checkbox" class="skill-toggle" data-sid="' + s.id + '"' + (s.enabled ? ' checked' : '') + '><span class="slider"></span></label></td>'
+        + '</tr>').join('');
+      $$('.skill-toggle').forEach(cb => cb.addEventListener('change', async () => {
+        await fetch('/admin/skills/' + encodeURIComponent(cb.dataset.sid), {
+          method: 'PUT', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({enabled: cb.checked}),
+        });
+        toast('Skill ' + (cb.checked ? 'enabled' : 'disabled'), 'success');
+      }));
+    }
+  } catch { /* silent */ }
+}
+
+// ── Init ────────────────────────────────────────────────────
+checkStatus(); loadKeyStatus(); loadProviderCatalog(); loadConfig(); loadStats(); loadCacheEntries(); loadLogs(); loadMissions(); loadSkills();
+setInterval(checkStatus, 5000);
+setInterval(loadStats, 5000);
+setInterval(loadLogs, 3000);
+setInterval(loadKeyStatus, 15000);
+setInterval(loadMissions, 10000);
+setInterval(loadSkills, 30000);
+</script>
+</body>
+</html>

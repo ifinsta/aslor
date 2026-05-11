@@ -1,0 +1,1210 @@
+{"level": "INFO", "logger": "uvicorn.error", "message": "Started server process [10152]"}
+{"level": "INFO", "logger": "uvicorn.error", "message": "Waiting for application startup."}
+{"level": "INFO", "logger": "uvicorn.error", "message": "Application startup complete."}
+{"level": "INFO", "logger": "uvicorn.error", "message": "Uvicorn running on http://127.0.0.1:3001 (Press CTRL+C to quit)"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f1a2f0b4 GET /dashboard"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f1a2f0b4 200 63ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65171 - \"GET /dashboard HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2718b346 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=5"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 24/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 400 Bad Request\""}
+{"level": "ERROR", "logger": "aslor.pipeline", "message": "pipeline: upstream returned 400 \u2014 {\"error\":{\"message\":\"Failed to deserialize the JSON body into the target type: messages[1].role: unknown variant `developer`, expected one of `system`, `user`, `assistant`, `tool`, `latest_reminder` at line 1 column 4186\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2718b346 400 1695ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65279 - \"POST /v1/chat/completions HTTP/1.1\" 400"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2819b94f POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=5"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 24/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2819b94f 200 1615ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65279 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req d8fac22f POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=8"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content from history (session=e80248a085b63ff38db2123a6ba84e00, exact=1, global_exact=0, positional=1)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 25/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res d8fac22f 200 1840ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65405 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2919b1a2 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=30"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content using exact session matches=2 global exact matches=0 positional fallback=17 latest fallback=1 (session=e80248a085b63ff38db2123a6ba84e00)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 26/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2919b1a2 200 1670ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65405 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req bb3235d0 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=33"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content using exact session matches=3 global exact matches=0 positional fallback=17 latest fallback=1 (session=e80248a085b63ff38db2123a6ba84e00)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 27/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 400 Bad Request\""}
+{"level": "ERROR", "logger": "aslor.pipeline", "message": "pipeline: upstream returned 400 \u2014 {\"error\":{\"message\":\"The `reasoning_content` in the thinking mode must be passed back to the API.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res bb3235d0 400 1599ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65405 - \"POST /v1/chat/completions HTTP/1.1\" 400"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req d7f2ce82 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=5"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 27/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res d7f2ce82 200 2020ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63911 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a62d1722 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=8"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content from history (session=e80248a085b63ff38db2123a6ba84e00, exact=1, global_exact=0, positional=1)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 28/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a62d1722 200 1493ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63939 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req fe3e0b63 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=27"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content using exact session matches=2 global exact matches=0 positional fallback=17 latest fallback=1 (session=e80248a085b63ff38db2123a6ba84e00)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 29/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res fe3e0b63 200 1645ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63954 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c81c180a POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=31"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content using exact session matches=3 global exact matches=0 positional fallback=17 latest fallback=1 (session=e80248a085b63ff38db2123a6ba84e00)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 30/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c81c180a 200 2030ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63954 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f1e6c8c8 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=15"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content using exact session matches=0 global exact matches=0 positional fallback=0 latest fallback=1 (session=e80248a085b63ff38db2123a6ba84e00)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 31/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f1e6c8c8 200 1848ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63018 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 919a0202 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=35"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content using exact session matches=1 global exact matches=0 positional fallback=21 latest fallback=1 (session=e80248a085b63ff38db2123a6ba84e00)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 32/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 919a0202 200 1570ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63018 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 14168357 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=38"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content using exact session matches=2 global exact matches=0 positional fallback=21 latest fallback=1 (session=e80248a085b63ff38db2123a6ba84e00)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 33/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 400 Bad Request\""}
+{"level": "ERROR", "logger": "aslor.pipeline", "message": "pipeline: upstream returned 400 \u2014 {\"error\":{\"message\":\"The `reasoning_content` in the thinking mode must be passed back to the API.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 14168357 400 1418ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63018 - \"POST /v1/chat/completions HTTP/1.1\" 400"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1da5a534 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=29123e1a messages=2"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 33/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 400 Bad Request\""}
+{"level": "ERROR", "logger": "aslor.pipeline", "message": "pipeline: upstream returned 400 \u2014 {\"error\":{\"message\":\"Failed to deserialize the JSON body into the target type: messages[1].role: unknown variant `developer`, expected one of `system`, `user`, `assistant`, `tool`, `latest_reminder` at line 1 column 1467\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1da5a534 400 1283ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63030 - \"POST /v1/chat/completions HTTP/1.1\" 400"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6a52aefa POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=29123e1a messages=2"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 33/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6a52aefa 200 1310ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63030 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session 29123e1aa1627b4465d2b405a46eedfd (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2f52334e POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=21"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content using exact session matches=0 global exact matches=0 positional fallback=0 latest fallback=1 (session=e80248a085b63ff38db2123a6ba84e00)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 34/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2f52334e 200 1690ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52361 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req fa523966 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=24"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content from history (session=e80248a085b63ff38db2123a6ba84e00, exact=1, global_exact=0, positional=9)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 35/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res fa523966 200 1525ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52361 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0eb86105 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=27"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content from history (session=e80248a085b63ff38db2123a6ba84e00, exact=2, global_exact=0, positional=10)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 36/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0eb86105 200 1734ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52361 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c5e27a7f GET /"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c5e27a7f 404 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58229 - \"GET / HTTP/1.1\" 404"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 154ad970 GET /favicon.ico"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 154ad970 404 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58229 - \"GET /favicon.ico HTTP/1.1\" 404"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c977321b GET /dashboard"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c977321b 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63695 - \"GET /dashboard HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 99fd557d GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f7298c99 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 99fd557d 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63695 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f7298c99 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51556 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req d6436ffc GET /admin/provider-catalog"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 4d6c7174 GET /admin/config"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 20fcf49e GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res d6436ffc 200 13ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65321 - \"GET /admin/provider-catalog HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a18ec2e4 GET /admin/cache/entries"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a14ab925 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req bbb30e96 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 4d6c7174 200 17ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63490 - \"GET /admin/config HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 20fcf49e 200 14ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:64844 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a18ec2e4 200 12ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63496 - \"GET /admin/cache/entries HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a14ab925 200 14ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63695 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res bbb30e96 200 14ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51556 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c253e502 GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c253e502 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65321 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 953afa2f POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=72"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content using exact session matches=4 global exact matches=0 positional fallback=20 latest fallback=1 (session=e80248a085b63ff38db2123a6ba84e00)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 37/3, skills=0)"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c5434815 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c5434815 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65321 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 953afa2f 200 1853ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55364 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 725ed3c6 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 64e526aa GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 725ed3c6 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65321 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 64e526aa 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51556 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 5ea2f2be GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 5ea2f2be 200 198ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51556 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session e80248a085b63ff38db2123a6ba84e00 (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a069d38b GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a069d38b 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51556 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req abdc2e70 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 21f3b7a3 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res abdc2e70 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51556 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 21f3b7a3 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65321 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req df2fa62c GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res df2fa62c 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51213 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 7f0fd1c8 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 7f0fd1c8 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51213 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 9cb7c2f5 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 9cb7c2f5 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51213 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 41e444f4 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 074b14cc GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 41e444f4 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58931 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 15d30026 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 074b14cc 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52621 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 15d30026 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51542 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ece035ec GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ece035ec 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51542 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8e3c9644 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req d974a506 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8e3c9644 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51542 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res d974a506 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52621 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 34298113 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 34298113 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59708 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 20e0d014 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 20e0d014 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59708 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 54230e93 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 54230e93 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59708 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 203740b7 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 203740b7 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59708 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 95be3b47 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 95be3b47 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55589 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 451fd181 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 451fd181 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55589 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 42b80a84 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 42b80a84 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55589 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8613bee5 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 53afae90 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 659d8f26 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8613bee5 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54890 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1e8b6828 GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 53afae90 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57877 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 74c86083 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 659d8f26 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55794 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1e8b6828 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58989 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 74c86083 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54179 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 5fc063fa POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=e80248a0 messages=75"}
+{"level": "INFO", "logger": "aslor.reasoning.repair", "message": "repair: repaired reasoning_content using exact session matches=5 global exact matches=0 positional fallback=20 latest fallback=1 (session=e80248a085b63ff38db2123a6ba84e00)"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 38/3, skills=0)"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 48a8df30 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 48a8df30 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54179 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 400 Bad Request\""}
+{"level": "ERROR", "logger": "aslor.pipeline", "message": "pipeline: upstream returned 400 \u2014 {\"error\":{\"message\":\"The `reasoning_content` in the thinking mode must be passed back to the API.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 5fc063fa 400 1621ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54180 - \"POST /v1/chat/completions HTTP/1.1\" 400"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 4745c6fb GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b9604f37 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 4745c6fb 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54179 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b9604f37 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58989 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e1466408 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=29123e1a messages=2"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 38/3, skills=0)"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a7cd3d30 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a7cd3d30 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58989 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 400 Bad Request\""}
+{"level": "ERROR", "logger": "aslor.pipeline", "message": "pipeline: upstream returned 400 \u2014 {\"error\":{\"message\":\"Failed to deserialize the JSON body into the target type: messages[1].role: unknown variant `developer`, expected one of `system`, `user`, `assistant`, `tool`, `latest_reminder` at line 1 column 1467\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e1466408 400 1609ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54183 - \"POST /v1/chat/completions HTTP/1.1\" 400"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 5b669c65 POST /v1/chat/completions"}
+{"level": "INFO", "logger": "aslor.pipeline", "message": "pipeline: model=deepseek-v4-flash needs_repair=True session=29123e1a messages=2"}
+{"level": "INFO", "logger": "aslor.missions.injector", "message": "mission: injected context for 'frontend-alignment-to-backend' (attempt 38/3, skills=0)"}
+{"level": "INFO", "logger": "httpx", "message": "HTTP Request: POST https://api.deepseek.com/v1/chat/completions \"HTTP/1.1 200 OK\""}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 5b669c65 200 1364ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54183 - \"POST /v1/chat/completions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1d52c6bd GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1d52c6bd 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58989 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6ab76621 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 5064ac23 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 31a4a94f GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6ab76621 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58989 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 5064ac23 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54179 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 31a4a94f 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54165 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 42b774e5 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 42b774e5 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54165 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0156a18f GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6f1d3d61 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0156a18f 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54165 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6f1d3d61 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58104 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 639377fb GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b99209b6 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 639377fb 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51421 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b99209b6 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59256 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 09644fc3 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 09644fc3 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59256 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0810d455 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b9eb083c GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3b0e85a0 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0810d455 200 10ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59256 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b9eb083c 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60303 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3b0e85a0 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55383 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 57993ec2 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 57993ec2 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55383 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 26bd1410 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 26bd1410 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55383 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e5c29285 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 9d60da74 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e5c29285 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55383 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 9d60da74 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60303 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.agents.capture", "message": "capture: saved reasoning state for session 29123e1aa1627b4465d2b405a46eedfd (fields=['reasoning_content'])"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 128fda73 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 128fda73 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60303 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 7ecd792d GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 7ecd792d 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60303 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 20a7e282 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 757891ff GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 13e1b09a GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 20a7e282 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53168 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 757891ff 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58941 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 95377fdf GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 13e1b09a 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57302 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e3488178 GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 95377fdf 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54772 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e3488178 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60687 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f16d3269 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f16d3269 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60687 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c125fb6b GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3481f339 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c125fb6b 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60687 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3481f339 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54772 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ea57f3be GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ea57f3be 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54772 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 01ddc872 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 01ddc872 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54772 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e43905bb GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req d3a11a35 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e43905bb 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54772 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res d3a11a35 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53864 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 783699fd GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 783699fd 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51118 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 87a98dac GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 87a98dac 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51118 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 75814adb GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req d168240f GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 75814adb 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51118 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res d168240f 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51450 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b0f3c4f8 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 245d44e6 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b0f3c4f8 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59190 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 245d44e6 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58864 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2afcf421 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2afcf421 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58864 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 63dc5a5d GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6b174d62 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 63dc5a5d 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58864 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6b174d62 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59190 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 9d6cbc56 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 9d6cbc56 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51284 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1c9cc8b7 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1c9cc8b7 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51284 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 626e767d GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 626e767d 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51284 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ea5ac6ad GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 89461e3d GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ea5ac6ad 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51284 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 89461e3d 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59190 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e159306a GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e159306a 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59190 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 85a9dfad GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 85a9dfad 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59190 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8badb31d GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a43675f4 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e4e3d6c4 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a45bed7c GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8badb31d 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59071 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a43675f4 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63275 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req d3a3a856 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e4e3d6c4 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53897 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a45bed7c 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62015 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res d3a3a856 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63435 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1aef8c09 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1aef8c09 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63435 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ccfd506d GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ccfd506d 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63435 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 75feefa0 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 75feefa0 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56478 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2e0c7cc7 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2e0c7cc7 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56478 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a6ae9b33 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a6ae9b33 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56478 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 456a0d87 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 71888502 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3c3ae437 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 456a0d87 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56478 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 71888502 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50349 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3c3ae437 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51360 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req eca95f03 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res eca95f03 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51360 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c8b45677 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1ff4adb1 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 77ad6d8f GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c8b45677 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51360 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1ff4adb1 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50349 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 36067d2b GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 77ad6d8f 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56478 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 36067d2b 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51560 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 5a3f3c3f GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 5a3f3c3f 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51560 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 7f0b75a5 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 4d41bfe1 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 45abfc85 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 7f0b75a5 200 13ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51560 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 4d41bfe1 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49305 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 45abfc85 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53072 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8c6ee3f0 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8c6ee3f0 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53072 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 148f8ec9 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 148f8ec9 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53072 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 4920556b GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 02884ce5 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 4920556b 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53072 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 02884ce5 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49305 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 7ce62daa GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 7ce62daa 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49305 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ad09bb10 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ad09bb10 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49305 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e2290e2a GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1630896d GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1bd80ad2 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e2290e2a 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:61147 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 7f837deb GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1630896d 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62336 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c08c6479 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1bd80ad2 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53434 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 7f837deb 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63692 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c08c6479 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51644 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3b4b7f1b GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3b4b7f1b 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51644 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3085068e GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6d60dced GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3085068e 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51644 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6d60dced 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63692 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 65328593 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 65328593 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63692 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 62e2b33c GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 62e2b33c 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63692 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c31968c5 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8aa2bc6c GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c31968c5 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63692 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8aa2bc6c 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52815 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 579dd15b GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 579dd15b 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54299 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req d1288aa7 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res d1288aa7 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54299 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 17a555c4 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 17a555c4 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54299 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 77a5eef3 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 75374f83 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 77a5eef3 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49730 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f6aa94fb GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 75374f83 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51535 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f6aa94fb 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51976 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 639e7930 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 639e7930 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51976 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e79a8f01 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e79a8f01 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51976 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1f62d3c1 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req deff55d4 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1f62d3c1 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59370 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res deff55d4 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57794 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b449fcd6 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b449fcd6 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57794 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req dd1360f8 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res dd1360f8 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57794 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 39ae7a3a GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e867583f GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 39ae7a3a 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57794 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e867583f 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49404 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 569aa370 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 569aa370 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49404 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 197b2472 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 197b2472 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49404 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 7d880fb0 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req bba49861 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 569165a3 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 7d880fb0 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59973 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c2673473 GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res bba49861 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53362 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ae6404ad GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 569165a3 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55681 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c2673473 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59816 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ae6404ad 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63247 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 47b8d809 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 47b8d809 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63247 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 182f71b6 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 182f71b6 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63247 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1de78620 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1de78620 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57035 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8f6d87f2 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8f6d87f2 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57035 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c7558627 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c7558627 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57035 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 666f408b GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 666f408b 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57035 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req facc1404 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res facc1404 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50555 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3253e8b2 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3253e8b2 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60910 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 03b212c7 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 03b212c7 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60910 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6ed44bed GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e1526fdb GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6ed44bed 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60910 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8b80774a GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e1526fdb 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51288 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3b5e459b GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8b80774a 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:64421 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3b5e459b 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56541 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 24d4eb32 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 24d4eb32 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56541 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req cfb29f4d GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res cfb29f4d 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56541 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 9a35fbff GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e32f954b GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 9a35fbff 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53196 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e32f954b 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56205 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 31f57912 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 31f57912 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56205 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a5c9ced2 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a5c9ced2 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56205 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 46a70560 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 46a70560 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56205 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req aeaed254 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res aeaed254 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55080 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0e8d7a10 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0e8d7a10 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55080 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 04eed605 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 70cea3a3 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 04eed605 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55080 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 71c47b2b GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 70cea3a3 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63748 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8c1bd027 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req cad5df3c GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 71c47b2b 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63982 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req fff5eaa8 GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8c1bd027 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51547 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res cad5df3c 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51720 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res fff5eaa8 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65118 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 304f3d28 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 304f3d28 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65118 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req af27954d GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f4da2e0b GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res af27954d 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65118 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f4da2e0b 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54677 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ba564f2e GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ba564f2e 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54677 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0cb27ac2 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0cb27ac2 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54677 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f919b8b8 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f919b8b8 200 10ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54677 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 64017dd3 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 64017dd3 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:64206 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ea97c33f GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ea97c33f 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50929 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 530008da GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 530008da 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50929 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b8c81aa5 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b8c81aa5 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50929 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 50e12ad6 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 795cfc2c GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 50e12ad6 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52543 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 35920223 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 795cfc2c 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62984 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 35920223 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:61615 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e0a8040a GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e0a8040a 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:61615 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 41d3ff6c GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req df3feed9 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 41d3ff6c 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:61615 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res df3feed9 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62984 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2802ebd0 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2802ebd0 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58425 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0c0c7736 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0c0c7736 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58425 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 82d88592 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 82d88592 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58425 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 984bdb22 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f889ef2d GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 984bdb22 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58425 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f889ef2d 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62984 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e288f88d GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e288f88d 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62984 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c8bcc339 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c8bcc339 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62984 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c41e679b GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req bf9cc79d GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3226a6ad GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c41e679b 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53088 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6751dded GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res bf9cc79d 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52120 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6ce5002a GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3226a6ad 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:64085 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6751dded 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55656 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6ce5002a 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63540 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req dec9bb15 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res dec9bb15 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63540 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0fd9b950 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0fd9b950 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63540 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6bbe5d74 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6bbe5d74 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63715 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 828308c9 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 828308c9 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63715 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 788ed087 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 788ed087 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63715 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c466ed37 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0149015c GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ea0aad2c GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c466ed37 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63715 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0149015c 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50105 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ea0aad2c 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49219 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a9de8fa5 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a9de8fa5 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49219 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c3a71258 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req fad80871 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 57fbbb89 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c3a71258 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49219 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res fad80871 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50105 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 57fbbb89 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63715 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0995b7ef GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0995b7ef 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62334 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 19edd153 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 19edd153 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62334 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1b4e21bd GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1b4e21bd 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62334 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b430a59e GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3dfc4af0 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b430a59e 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:64948 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3dfc4af0 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:61730 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a2af7829 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a2af7829 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:61730 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2ae9c792 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2ae9c792 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:61730 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 657fcc9e GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 657fcc9e 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:61730 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3a3a4231 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3a3a4231 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51682 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2532e0cb GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2532e0cb 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51682 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req bcb89256 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2a690ec7 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res bcb89256 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51682 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req d49ac608 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2a690ec7 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57771 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 95bcd0b8 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req cf6fb082 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res d49ac608 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:51784 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 40c1cd1e GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 95bcd0b8 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59632 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res cf6fb082 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54066 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 40c1cd1e 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58570 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a74a0829 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a74a0829 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58570 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c0937373 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req bbeac35a GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c0937373 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58570 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res bbeac35a 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55219 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req d9eba16f GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res d9eba16f 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55219 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req da084160 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res da084160 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55219 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 01da3101 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 262508f3 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 01da3101 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55219 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 17209c02 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 262508f3 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58570 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 17209c02 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53450 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f0a2977c GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f0a2977c 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53450 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req cf47b03f GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req bb7f57a9 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res cf47b03f 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53450 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ee31ee3d GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res bb7f57a9 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52263 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req acb1c65a GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ee31ee3d 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57289 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res acb1c65a 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53468 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1524eb5c GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1524eb5c 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53468 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 248e4558 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f6f3a38c GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 13df21e6 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 248e4558 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53468 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f6f3a38c 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57289 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 13df21e6 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52263 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 23b25c7d GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 23b25c7d 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52263 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 1a7db151 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 1a7db151 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52263 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6611ad90 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6611ad90 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52263 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ce4241fd GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ce4241fd 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57039 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 349d6bca GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 349d6bca 200 10ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57039 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c7915b52 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req bff12371 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c7915b52 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57039 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res bff12371 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56582 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 5dd9d587 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 758653c2 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 67e7f89c GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 5dd9d587 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63204 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e962ce61 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 758653c2 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60476 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 67e7f89c 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62758 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e962ce61 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60997 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 118cfe91 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 118cfe91 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60997 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 91544dd0 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 9770dad5 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 91544dd0 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60997 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 9770dad5 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62758 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req aaaf56b6 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res aaaf56b6 200 10ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62758 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 783d669a GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 783d669a 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62758 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6fb812d5 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f3fd4875 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ae04170a GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6fb812d5 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62758 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f3fd4875 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60997 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ae04170a 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59793 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ff321616 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ff321616 200 10ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59793 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 698e2168 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 698e2168 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59793 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e97f9f8b GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e81a08f0 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ec3b631d GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e97f9f8b 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62476 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e81a08f0 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53614 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ec3b631d 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57634 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 659b30d6 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 659b30d6 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57634 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0b4baaa2 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e8eb9129 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2d945fb5 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0b4baaa2 200 10ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57634 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e8eb9129 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53614 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2d945fb5 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62476 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 37c04112 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 37c04112 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62476 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 2bb32bc0 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 2bb32bc0 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62476 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 05c216a4 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 4a642a2d GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 05c216a4 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62476 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 4a642a2d 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53614 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0dff824c GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0dff824c 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53614 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c9053217 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c9053217 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53614 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 27af9034 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 4e3a1e20 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 975886d9 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b244504b GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 27af9034 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57044 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 4e3a1e20 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49791 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a420eaab GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 975886d9 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50426 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b244504b 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56747 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a420eaab 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50235 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 496aa66b GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 5805a25b GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0bca90d4 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 496aa66b 200 10ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:65215 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ae3c89ba GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 5805a25b 200 14ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52211 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0bca90d4 200 12ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55420 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8e66acf8 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8be4d2f3 GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ae3c89ba 200 10ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58298 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8e66acf8 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57153 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8be4d2f3 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54918 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a7778a2b GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 9f788064 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 368deb0b GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a7778a2b 200 18ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59100 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 9f788064 200 11ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53945 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req fe813854 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 368deb0b 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55251 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0c84298a GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e2a8642d GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res fe813854 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55467 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0c84298a 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52286 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e2a8642d 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:61049 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 09078463 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c3280234 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 09078463 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:64019 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c3280234 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58703 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 681ccc6b GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f8256797 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req bcffaf9f GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 681ccc6b 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:63777 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 63a6be6a GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f8256797 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55804 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res bcffaf9f 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:53693 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 63a6be6a 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59424 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 0f1a63e6 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6682feb4 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b7f9a116 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 0f1a63e6 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:62880 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6682feb4 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:61459 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req ecde0ae6 GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b7f9a116 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59186 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req d14fb3a9 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c519add8 GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res ecde0ae6 200 10ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:55557 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res d14fb3a9 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:52381 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c519add8 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54239 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3e0829a1 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 156b6df7 GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3e0829a1 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:59919 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 156b6df7 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60409 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req e5631406 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req a46986bc GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8a3a101b GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res e5631406 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:56266 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 83b4899b GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res a46986bc 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58106 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8a3a101b 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54343 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 83b4899b 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57056 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f0f43e4a GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f0f43e4a 200 0ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57056 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 848d19ed GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 99f9c1d5 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 65eae1bb GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 848d19ed 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:57056 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 99f9c1d5 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54343 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 65eae1bb 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58106 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 856d826b GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 856d826b 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58106 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 56ff1297 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 56ff1297 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58106 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3fdae6db GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6333b3e1 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3fdae6db 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58106 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6333b3e1 200 1ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54343 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 67f868d7 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 67f868d7 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54343 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 4a948a21 POST /admin/restart"}
+{"level": "INFO", "logger": "aslor.server.routes", "message": "admin: restart requested"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 4a948a21 202 33ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54343 - \"POST /admin/restart HTTP/1.1\" 202"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b55816be GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b55816be 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54343 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 9ee85bbd GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c0ef9a33 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 9ee85bbd 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54343 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c0ef9a33 200 2ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58106 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6c3b3e57 GET /admin/config"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 5dc86611 GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 8a0530c3 GET /admin/cache/entries"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 3eec896c GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6c3b3e57 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50816 - \"GET /admin/config HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 9140cf31 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 9ae3b476 GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 5dc86611 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49609 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 8a0530c3 200 6ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50060 - \"GET /admin/cache/entries HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 3eec896c 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54343 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 9140cf31 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60517 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 9ae3b476 200 8ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58106 - \"GET /admin/skills HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 63b59e0a GET /status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req 6ef577ae GET /admin/stats"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req c88bdb09 GET /admin/logs"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req f9fa2f69 GET /admin/key-status"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b551c20f GET /admin/missions"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "req b926ea99 GET /admin/skills"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 63b59e0a 200 9ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:60517 - \"GET /status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res 6ef577ae 200 4ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:58106 - \"GET /admin/stats HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res c88bdb09 200 3ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:54343 - \"GET /admin/logs HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res f9fa2f69 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50060 - \"GET /admin/key-status HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b551c20f 200 5ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:49609 - \"GET /admin/missions HTTP/1.1\" 200"}
+{"level": "INFO", "logger": "aslor.server.middleware", "message": "res b926ea99 200 7ms"}
+{"level": "INFO", "logger": "uvicorn.access", "message": "127.0.0.1:50816 - \"GET /admin/skills HTTP/1.1\" 200"}

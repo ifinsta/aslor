@@ -1,0 +1,20 @@
+server:
+  host: 127.0.0.1
+  port: 3001
+provider:
+  name: passthrough
+  base_url: https://api.deepseek.com/v1
+cache:
+  path: ./data/cache.db
+  encrypt: true
+logging:
+  level: INFO
+  format: json
+vision:
+  enabled: false
+  model: gpt-4o-mini
+  base_url: https://api.openai.com/v1
+  api_key_env: OPENAI_API_KEY
+  timeout_seconds: 60
+  max_image_bytes: 10485760
+  upload_dir: ./data/vision
